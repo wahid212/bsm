@@ -5,7 +5,7 @@ import LoginPage from './pages/LoginPage';
 
 function App() {
   return (
-    <Router basename="/bsm-landing-page">
+    <Router basename="/bsm">
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<LoginPage />} />
