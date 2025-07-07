@@ -85,7 +85,7 @@ const LoginPage: React.FC = () => {
             {/* User Type Selection */}
             <div className="mb-6">
               <label className="block text-sm font-medium text-gray-700 mb-3">
-                Masuk sebagai:
+                Masuk sebagai
               </label>
               <div className="grid grid-cols-1 gap-3">
                 {userTypes.map((type) => (
