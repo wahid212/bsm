@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header: React.FC = () => {
   return (
@@ -31,9 +32,12 @@ const Header: React.FC = () => {
 
           {/* Login Button */}
           <div className="flex items-center space-x-4">
-            <button className="btn-primary">
+            <Link
+              to="/login"
+              className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200"
+            >
               Masuk
-            </button>
+            </Link>
           </div>
         </div>
       </div>
