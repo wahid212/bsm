@@ -24,9 +24,9 @@ const Header: React.FC = () => {
             <a href="#manfaat" className="text-gray-600 hover:text-primary-600 transition-colors">
               Manfaat
             </a>
-            <a href="#kontak" className="text-gray-600 hover:text-primary-600 transition-colors">
+            {/* <a href="#kontak" className="text-gray-600 hover:text-primary-600 transition-colors">
               Kontak
-            </a>
+            </a> */}
           </nav>
 
           {/* Login Button */}
