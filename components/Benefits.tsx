@@ -1,3 +1,4 @@
+// components/Benefits.tsx
 import React from 'react';
 
 const Benefits: React.FC = () => {
