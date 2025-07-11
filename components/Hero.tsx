@@ -26,7 +26,7 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section className="bg-gradient-to-br from-primary-50 to-white py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section className="bg-gradient-to-br from-primary-50 to-white dark:from-gray-800 dark:to-gray-900 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden transition-colors duration-300">
       <motion.div 
         className="max-w-7xl mx-auto text-center"
         variants={containerVariants}
@@ -34,12 +34,12 @@ const Hero: React.FC = () => {
         animate="visible"
       >
         <motion.h1 
-          className="text-4xl md:text-6xl font-bold text-gray-900 mb-6"
+          className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6"
           variants={itemVariants}
         >
           Sistem Manajemen 
           <motion.span 
-            className="text-primary-600 block"
+            className="text-primary-600 dark:text-primary-400 block"
             variants={itemVariants}
           >
             Bank Santri Munawwarah
@@ -47,7 +47,7 @@ const Hero: React.FC = () => {
         </motion.h1>
         
         <motion.p 
-          className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto"
+          className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto"
           variants={itemVariants}
         >
           BSM adalah platform digital yang menghubungkan dayah, santri, dan wali santri 
@@ -59,20 +59,20 @@ const Hero: React.FC = () => {
           variants={itemVariants}
         >
           <motion.button 
-            className="btn-primary text-lg px-8 py-3 relative overflow-hidden"
+            className="bg-primary-600 hover:bg-primary-700 dark:bg-primary-700 dark:hover:bg-primary-800 text-white text-lg px-8 py-3 rounded-lg font-medium transition-colors relative overflow-hidden"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             <span className="relative z-10">Mulai Sekarang</span>
             <motion.div
-              className="absolute inset-0 bg-primary-700"
+              className="absolute inset-0 bg-primary-700 dark:bg-primary-800"
               initial={{ x: "-100%" }}
               whileHover={{ x: 0 }}
               transition={{ duration: 0.3 }}
             />
           </motion.button>
           <motion.button 
-            className="btn-secondary text-lg px-8 py-3"
+            className="bg-transparent border-2 border-primary-600 dark:border-primary-400 text-primary-600 dark:text-primary-400 hover:bg-primary-600 dark:hover:bg-primary-700 hover:text-white dark:hover:text-white text-lg px-8 py-3 rounded-lg font-medium transition-colors"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -85,8 +85,8 @@ const Hero: React.FC = () => {
           className="relative mx-auto max-w-5xl"
           variants={itemVariants}
         >
-          <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-200 relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary-50/30 to-transparent rounded-2xl" />
+          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-8 border border-gray-200 dark:border-gray-700 relative transition-colors duration-300">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary-50/30 dark:from-primary-900/20 to-transparent rounded-2xl" />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
               {[
                 { emoji: '🏫', title: 'Dayah', desc: 'Manajemen institusi' },
@@ -101,13 +101,13 @@ const Hero: React.FC = () => {
                   transition={{ delay: 0.6 + index * 0.2 }}
                 >
                   <motion.div 
-                    className="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:bg-primary-200 transition-colors"
+                    className="w-16 h-16 bg-primary-100 dark:bg-primary-900/50 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:bg-primary-200 dark:group-hover:bg-primary-800 transition-colors"
                     whileHover={{ scale: 1.1, rotate: 5 }}
                   >
-                    <span className="text-primary-600 text-2xl">{item.emoji}</span>
+                    <span className="text-primary-600 dark:text-primary-400 text-2xl">{item.emoji}</span>
                   </motion.div>
-                  <h3 className="font-semibold text-gray-900 mb-2">{item.title}</h3>
-                  <p className="text-sm text-gray-600">{item.desc}</p>
+                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2">{item.title}</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">{item.desc}</p>
                 </motion.div>
               ))}
             </div>

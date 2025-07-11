@@ -2,8 +2,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -11,10 +13,13 @@ const Header: React.FC = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
   return (
     <motion.header 
       className={`sticky top-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-white shadow-sm'
+        isScrolled 
+          ? 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg' 
+          : 'bg-white dark:bg-gray-900 shadow-sm'
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -34,20 +39,21 @@ const Header: React.FC = () => {
             >
               <span className="text-white font-bold text-lg">B</span>
             </motion.div>
-            <span className="text-xl font-bold text-gray-900">BSM</span>
+            <span className="text-xl font-bold text-gray-900 dark:text-white">BSM</span>
           </motion.div>
+
           {/* Navigation */}
           <nav className="hidden md:flex space-x-8">
             {['beranda', 'fitur', 'manfaat'].map((item) => (
               <motion.a
                 key={item}
                 href={`#${item}`}
-                className="text-gray-600 hover:text-primary-600 transition-colors capitalize relative"
+                className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors capitalize relative"
                 whileHover={{ scale: 1.05 }}
               >
                 {item}
                 <motion.div
-                  className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary-600"
+                  className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary-600 dark:bg-primary-400"
                   initial={{ scaleX: 0 }}
                   whileHover={{ scaleX: 1 }}
                   transition={{ duration: 0.3 }}
@@ -55,6 +61,7 @@ const Header: React.FC = () => {
               </motion.a>
             ))}
           </nav>
+
           {/* Login Button */}
           <motion.div 
             className="flex items-center space-x-4"
@@ -63,11 +70,11 @@ const Header: React.FC = () => {
           >
             <Link
               to="/login"
-              className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-all duration-200 relative overflow-hidden"
+              className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800 text-white font-medium py-2 px-4 rounded-lg transition-all duration-200 relative overflow-hidden"
             >
               <span className="relative z-10">Masuk</span>
               <motion.div
-                className="absolute inset-0 bg-blue-700"
+                className="absolute inset-0 bg-blue-700 dark:bg-blue-800"
                 initial={{ x: "-100%" }}
                 whileHover={{ x: 0 }}
                 transition={{ duration: 0.3 }}
@@ -79,4 +86,5 @@ const Header: React.FC = () => {
     </motion.header>
   );
 };
+
 export default Header;

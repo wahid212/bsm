@@ -80,9 +80,9 @@ const Features: React.FC = () => {
   };
 
   return (
-    <section id="fitur" className="py-20 bg-gray-50 relative overflow-hidden">
+    <section id="fitur" className="py-20 bg-gray-50 dark:bg-gray-800 relative overflow-hidden transition-colors duration-300">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-5 dark:opacity-10">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary-600 to-transparent" />
       </div>
       
@@ -93,10 +93,10 @@ const Features: React.FC = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Fitur Lengkap untuk Bank Santri Munawwarah
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Semua yang Anda butuhkan untuk mengelola boarding school dalam satu platform yang terintegrasi
           </p>
         </motion.div>
@@ -111,12 +111,12 @@ const Features: React.FC = () => {
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              className="group relative bg-white rounded-xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden"
+              className="group relative bg-white dark:bg-gray-700 rounded-xl p-6 shadow-sm hover:shadow-xl dark:shadow-gray-900/50 transition-all duration-300 border border-gray-100 dark:border-gray-600 overflow-hidden"
               variants={itemVariants}
               whileHover={{ y: -5 }}
             >
               {/* Background gradient on hover */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
+              <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-5 dark:group-hover:opacity-10 transition-opacity duration-300`} />
               
               <motion.div 
                 className="text-4xl mb-4 relative z-10"
@@ -126,11 +126,11 @@ const Features: React.FC = () => {
                 {feature.icon}
               </motion.div>
               
-              <h3 className="text-xl font-semibold text-gray-900 mb-3 relative z-10">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 relative z-10">
                 {feature.title}
               </h3>
               
-              <p className="text-gray-600 leading-relaxed relative z-10">
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed relative z-10">
                 {feature.description}
               </p>
               
